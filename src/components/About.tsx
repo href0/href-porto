@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Database, Cloud, Zap } from 'lucide-react';
+import { Code2, Database, Zap } from 'lucide-react';
 
 const About = () => {
   const highlights = [

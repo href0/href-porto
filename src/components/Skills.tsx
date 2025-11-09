@@ -3,7 +3,6 @@ import {
   Code2,
   Server,
   Database,
-  Package,
   Wrench,
   Layers,
   Zap
