@@ -1,26 +1,38 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Server, ShoppingCart, Building2 } from 'lucide-react';
+import { ExternalLink, Github, Server, ShoppingCart, Building2, Package } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
+      title: '@href00/envx',
+      description:
+        'A lightweight, type-safe environment variable manager for Node.js applications. Published on NPM with TypeScript support, validation, and easy configuration management.',
+      icon: Package,
+      tech: ['TypeScript', 'Node.js', 'NPM Package', 'CLI'],
+      highlights: ['Open Source', 'Type-Safe', 'Published on NPM'],
+      github: 'https://github.com/href0/envx',
+      link: 'http://envx.hrefdev.be/',
+      npm: 'https://www.npmjs.com/package/@href00/envx',
+      featured: true,
+    },
+    {
       title: 'Indonesia National Single Window (INSW)',
       description:
-        'Large-scale government system for Ministry of Finance, handling seamless integration with multiple government agencies. Optimized database queries and improved system efficiency.',
+        'Large-scale government integration platform connecting Ministry of Finance with Ministry of Transportation (Inaport), Ministry of Trade, Ministry of Health, and other agencies. Features microservices architecture with RabbitMQ message queuing and Redis caching for high-performance inter-ministry data exchange.',
       icon: Building2,
-      tech: ['Node.js', 'Express', 'PostgreSQL', 'Microservices'],
-      highlights: ['Government Scale', 'High Performance', 'Query Optimization'],
+      tech: ['Node.js', 'Express', 'PostgreSQL', 'RabbitMQ', 'Redis', 'Microservices'],
+      highlights: ['Government Scale', 'Multi-Ministry Integration', 'Message Queue'],
       github: null, // Government project
       link: null,
       featured: true,
     },
     {
-      title: 'Enterprise Resource Planning (ERP) System',
+      title: 'ERP & Point of Sale (POS) System',
       description:
-        'Full-featured ERP application with complex business logic, inventory management, financial tracking, and reporting. Built with scalable architecture for enterprise use.',
+        'Comprehensive full-stack ERP application with integrated POS, featuring product management, warehouse operations, stock control, sales transactions, and third-party e-commerce integration (Tokopedia & Shopee) for automated product sync.',
       icon: Server,
-      tech: ['Node.js', 'Express.js', 'MySQL', 'Angular', 'RESTful API'],
-      highlights: ['Enterprise Grade', 'Complex Logic', 'Scalable'],
+      tech: ['Node.js', 'Express.js', 'Angular', 'MySQL', 'Tokopedia API', 'Shopee API'],
+      highlights: ['Full-Stack', 'E-commerce Integration', 'POS System'],
       github: null,
       link: null,
       featured: true,
@@ -143,7 +155,7 @@ const Projects = () => {
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-3 mt-6 pt-4 border-t border-border">
+                  <div className="flex flex-wrap gap-2 mt-6 pt-4 border-t border-border">
                     {project.github && (
                       <a
                         href={project.github}
@@ -155,6 +167,17 @@ const Projects = () => {
                         Code
                       </a>
                     )}
+                    {project.npm && (
+                      <a
+                        href={project.npm}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-mono transition-all hover:scale-105"
+                      >
+                        <Package className="w-4 h-4" />
+                        NPM
+                      </a>
+                    )}
                     {project.link && (
                       <a
                         href={project.link}
@@ -163,10 +186,10 @@ const Projects = () => {
                         className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded text-sm font-mono transition-all hover:scale-105"
                       >
                         <ExternalLink className="w-4 h-4" />
-                        View
+                        Docs
                       </a>
                     )}
-                    {!project.github && !project.link && (
+                    {!project.github && !project.link && !project.npm && (
                       <div className="text-xs text-muted-foreground font-mono italic">
                         Proprietary / Confidential Project
                       </div>
