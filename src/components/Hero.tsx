@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Mail, Linkedin, ArrowDown } from 'lucide-react';
+import { Github, Mail, Linkedin, ArrowDown, Download } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -72,36 +72,54 @@ const Hero = () => {
             <span className="text-accent">{'}'}</span>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Download CV Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex items-center justify-center gap-4 mb-12"
+            className="flex justify-center mb-8"
+          >
+            <a
+              href="https://1drv.ms/b/c/cc791e3ca1ce62da/EV-Dn363vt5FpAu3XvxfuTIBVXRCXbZkJVs720tZmCIiKA?e=1wjrn0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white rounded-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-accent/50 font-mono"
+            >
+              <Download className="w-5 h-5 group-hover:animate-bounce" />
+              <span className="font-semibold">Download CV</span>
+            </a>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="flex flex-wrap items-center justify-center gap-3 mb-12"
           >
             <a
               href="https://github.com/href0"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+              className="flex items-center gap-2 px-5 py-2.5 bg-secondary hover:bg-secondary/80 rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4" />
               <span className="font-mono text-sm">GitHub</span>
             </a>
             <a
               href="https://www.linkedin.com/in/href0"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+              className="flex items-center gap-2 px-5 py-2.5 bg-secondary hover:bg-secondary/80 rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4" />
               <span className="font-mono text-sm">LinkedIn</span>
             </a>
             <a
               href="mailto:me@hrefdev.be"
-              className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50"
+              className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4" />
               <span className="font-mono text-sm">Email</span>
             </a>
           </motion.div>
