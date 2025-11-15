@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Server, ShoppingCart, Building2, Package } from 'lucide-react';
+import { ExternalLink, Github, Server, ShoppingCart, Building2, Package, Rocket } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -46,6 +46,17 @@ const Projects = () => {
       highlights: ['Cloud Native', 'High Availability', 'RESTful APIs'],
       github: null,
       link: null,
+      featured: true,
+    },
+    {
+      title: 'Bun Hono Drizzle Starter',
+      description:
+        'A production-ready starter template for building modern APIs with Bun + Hono + Drizzle ORM. Features smart pagination, auto-generated OpenAPI documentation, JWT authentication, comprehensive validation, and flexible data seeding system.',
+      icon: Rocket,
+      tech: ['Bun', 'Hono', 'Drizzle ORM', 'TypeScript', 'PostgreSQL', 'Swagger'],
+      highlights: ['OpenAPI Documentation', 'Smart Pagination', 'JWT Auth', 'Docker Support'],
+      github: 'https://github.com/href0/bun-hono-drizzle-starter',
+      link: 'https://bun-starter.hrefdev.be/swagger-doc',
       featured: true,
     },
   ];
